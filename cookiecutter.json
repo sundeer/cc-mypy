@@ -1,0 +1,16 @@
+{
+  "full_name": "Rick Sewell",
+  "github_username": "sundeer",
+  "email": "{{ cookiecutter.github_username }}@rhsjmm.com",
+  "project_name": "New Project",
+  "repo_name": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
+  "pkg_name": "{{ cookiecutter.repo_name }}",
+  "version": "0.1.0",
+  "year": "2016",
+  "license": "MIT",
+  "github_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
+  "url": "{{ cookiecutter.github_url }}",
+  "short_description": "A new Python project",
+  "keywords": "hosted.by.github",
+  "features": "travis flake8 cli"
+}
