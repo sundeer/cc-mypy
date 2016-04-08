@@ -22,15 +22,21 @@ if new_project:
     from invoke import ctask as task
     from invoke import Collection, run, exceptions
 
+
+    namespace = Collection()
+
     @task
     def init(ctx):
         """Initialize new project for development."""
         ctx.run('pip install -U pip')
         ctx.run('pip install -U setuptools wheel')
         ctx.run('pip install -U -r dev-requirements.txt')
+
         ctx.run('python setup.py develop -U')
 
-    namespace = Collection()
+        ctx.run('git init')
+        ctx.run('git add .')
+        ctx.run('git commit -m "Initial commit"')
 
     namespace.add_task(init)
 
